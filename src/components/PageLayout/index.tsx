@@ -1,29 +1,31 @@
 import { useHistory } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { FC, useState } from "react";
 
-type propTypes = {
-  title: string;
-  description: string;
-  children: any;
-  noBreadcrumb: boolean;
-  goBackModal: boolean;
-  onGoBack: any;
+const propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  children: PropTypes. node.isRequired,
+  noBreadcrumb: PropTypes.bool,
+  goBackModal: PropTypes.bool,
+  onGoBack: PropTypes.func,
 };
 
-const PageLayout = ({
+type Props = PropTypes.InferProps<typeof propTypes>
+
+const PageLayout: FC<Props> = ({
   title,
   description,
   children,
-  noBreadcrumb,
   onGoBack,
   goBackModal,
-}: propTypes) => {
+}) => {
   const history = useHistory();
-  const [modal, setModal] = useState(false);
-  const [msj, setMsj] = useState({});
+  const [, setModal] = useState(false);
+  const [, setMsj] = useState({});
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, @typescript-eslint/no-explicit-any
   const handleClickBack = (e: any) => {
     e.preventDefault();
     if (goBackModal) {
@@ -72,16 +74,8 @@ PageLayout.defaultProps = {
   description: "",
   noBreadcrumb: false,
   onGoBack: undefined,
-  goBackModal: "",
+  goBackModal: false,
 };
-
-PageLayout.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  noBreadcrumb: PropTypes.bool,
-  goBackModal: PropTypes.bool,
-  onGoBack: PropTypes.func,
-};
+PageLayout.propTypes = propTypes;
 
 export default PageLayout;

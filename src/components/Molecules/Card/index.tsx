@@ -1,7 +1,25 @@
 import PropTypes from "prop-types";
+import { FC } from "react";
 import styles from "./styles.module.scss";
 
-const Card = ({
+const propTypes = {
+  className: PropTypes.string,
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  children: PropTypes.node,
+  close: PropTypes.bool,
+  handleClose: PropTypes.func,
+  back: PropTypes.bool,
+  handleBack: PropTypes.func,
+  onMouseLeave: PropTypes.func,
+  footer: PropTypes.node,
+  cardBackground: PropTypes.string,
+  style: PropTypes.object,
+};
+
+type Props = PropTypes.InferProps<typeof propTypes>;
+
+const Card: FC<Props> = ({
   className,
   title,
   subtitle,
@@ -14,22 +32,22 @@ const Card = ({
   cardBackground,
   onMouseLeave,
   style,
-}: any) => (
+}) => (
   <div
     className={`card px-3 ${className} ${styles.mainCard}`}
     style={{
       borderRadius: "15px",
       border: "none",
-      backgroundImage: cardBackground ? `url(${cardBackground})` : null,
+      backgroundImage: cardBackground ? `url(${cardBackground})` : '',
       ...(style || {}),
     }}
-    onMouseLeave={onMouseLeave}
+    onMouseLeave={()=>{ onMouseLeave }}
   >
     {title ? (
       <ul className="d-flex w-100 justify-content-between">
         {back && (
           <li>
-            <a href="#!" onClick={handleBack} />
+            <a href="#!" onClick={() => handleBack} />
           </li>
         )}
         <li>
@@ -38,7 +56,7 @@ const Card = ({
         </li>
         {close && (
           <li>
-            <a href="#!" onClick={handleClose}>
+            <a href="#!" onClick={ () => handleClose }>
               <span
                 aria-hidden="true"
                 className="p-0 pe-3"
@@ -73,18 +91,6 @@ Card.defaultProps = {
   cardBackground: "",
 };
 
-Card.propTypes = {
-  className: PropTypes.string,
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-  children: PropTypes.node,
-  close: PropTypes.bool,
-  handleClose: PropTypes.func,
-  back: PropTypes.bool,
-  handleBack: PropTypes.func,
-  onMouseLeave: PropTypes.func,
-  footer: PropTypes.node,
-  cardBackground: PropTypes.string,
-};
+Card.propTypes = propTypes;
 
 export default Card;

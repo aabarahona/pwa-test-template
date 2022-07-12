@@ -6,7 +6,7 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import './styles/main.scss';
 
-function App() {
+const App = () => {
   return (
     <HelmetProvider>
       <Router>
