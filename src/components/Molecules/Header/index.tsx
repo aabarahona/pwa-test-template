@@ -1,15 +1,14 @@
-import React from "react";
-import Card from "../Card";
+import React, { FC } from "react";
 import styles from "./styles.module.scss";
 import logo from "../../../logo.svg";
 
-type propTypes = {
+type Props = {
   className: string;
   activeNavbar: boolean;
   setActiveNavbar: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const Header = ({ className, activeNavbar, setActiveNavbar }: propTypes) => {
+const Header: FC<Props> = ({ className, activeNavbar, setActiveNavbar }) => {
   const handleClick = (e: { preventDefault: () => void }) => {
     e.preventDefault();
     setActiveNavbar(!activeNavbar);

@@ -1,4 +1,10 @@
-const Footer = ({ className }: any) => (
+import { FC } from "react";
+
+type Props = {
+  className: string;
+}
+
+const Footer: FC<Props> = ({ className }) => (
   <footer
     className={`${className} py-3 bg-white text-complementary-color d-flex flex-row justify-content-center`}
   >

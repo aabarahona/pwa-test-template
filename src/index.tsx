@@ -15,7 +15,7 @@ root.render(
 );
 
 serviceWorkerRegistration.register({
-  onUpdate: async (registration: { waiting: { postMessage: (arg0: { type: string; }) => void; }; unregister: () => any; }) => {
+  onUpdate: async (registration: { waiting: { postMessage: (arg0: { type: string; }) => void; }; unregister: () => unknown; }) => {
     // Corremos este código si hay una nueva versión de nuestra app
     // Detalles en: https://developers.google.com/web/fundamentals/primers/service-workers/lifecycle
     if (registration && registration.waiting) {
