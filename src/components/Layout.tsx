@@ -1,10 +1,16 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { FC, useState } from "react";
 import Footer from "./Molecules/Footer";
 import Header from "./Molecules/Header";
 import styles from "./styles.module.scss";
 
-const Layout = ({ children }: any) => {
+const propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+type Props = PropTypes.InferProps<typeof propTypes>;
+
+const Layout: FC<Props> = ({ children }) => {
   const [activeNavbar, setActiveNavbar] = useState(false);
   return (
     <div className={`${styles.gridContainer} bg-ligth-blue`}>
@@ -23,8 +29,6 @@ const Layout = ({ children }: any) => {
   );
 };
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
+Layout.propTypes = propTypes;
 
 export default Layout;

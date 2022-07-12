@@ -7,6 +7,7 @@ const isLocalhost = Boolean(
         /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
       )
   );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   export function register(config: any) {
     if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
       // The URL constructor is available in all browsers that support SW.
@@ -38,6 +39,7 @@ const isLocalhost = Boolean(
       });
     }
   }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function registerValidSW(swUrl: any, config: any) {
     navigator.serviceWorker
       .register(swUrl)
@@ -80,6 +82,7 @@ const isLocalhost = Boolean(
       });
   }
   
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function checkValidServiceWorker(swUrl: any, config: any) {
     // Check if the service worker can be found. If it can't reload the page.
     fetch(swUrl, {
