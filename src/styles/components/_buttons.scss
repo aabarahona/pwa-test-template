@@ -1,0 +1,88 @@
+.btn {
+    border: none;
+    font-size: 12px;
+    font-weight: $font-bold;
+    //   letter-spacing: 1.2px;
+    border-radius: 12px;
+    padding: 10px 18px;
+
+    &-primary {
+        background: $medium-grey;
+        color: $white;
+        transition: all .5s ease-in-out;
+
+        &:hover {
+            background: $black;
+        }
+
+        //   &:focus {
+        //       outline: none;
+        //       box-shadow: 0px 0px 0px 6px lighten($secondary-color, 15%);
+        //       background-color: $secondary-color;
+        //   }
+        //   &:disabled {
+        //       background: #FAFAFC !important;
+        //       color: $primary-color;
+        //   }
+    }
+
+    &-secondary {
+        background: $secondary-color;
+        color: $white;
+        transition: all .1s ease-in-out;
+        // font-size: 18px;
+
+        &:hover {
+            background: #e5713d;
+            // transform: translateY(-2px);
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
+            background: #e5713d;
+        }
+
+        &:disabled {
+            background: #FFCA99;
+            color: $white;
+        }
+    }
+
+    &-complementary{
+        background: transparent;
+        border: 1px solid $secondary-color;
+        color: $secondary-color;
+        transition: all .3s ease-in-out;
+        &:hover {
+            background: $secondary-color;
+            color: $white;
+            border: 1px solid $secondary-color;
+        }
+        // &:focus {
+        //     outline: none;
+        //     box-shadow: 0px 0px 0px 6px lighten($secondary-color, 25%);
+        //     background-color: $secondary-color;
+        //     color: $white;
+        // }
+    }
+    &-pagination {
+        padding: 0;
+        min-height: inherit;
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        &--inactive {
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+        }
+    }
+}
