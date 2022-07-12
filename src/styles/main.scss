@@ -1,0 +1,20 @@
+@import "utils/variables";
+@import "utils/media";
+@import "utils/mixins";
+
+@import "base/typography";
+@import "base/global";
+
+@import "components/buttons";
+@import "components/transitions";
+@import "components/inputs";
+@import "components/alerts";
+@import "components/texts";
+
+.greyTbody {
+  border-top: 1px solid #cdcdcd !important;
+  border-bottom: 1px solid #cdcdcd !important;
+}
+.card-h-100 {
+  height: 100%;
+}

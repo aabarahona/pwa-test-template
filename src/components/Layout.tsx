@@ -1,23 +1,24 @@
-import PropTypes from 'prop-types';
-// import Header from 'components/Molecules/Header';
-import Footer from './Molecules/Footer';
+import PropTypes from "prop-types";
+import { useState } from "react";
+import Footer from "./Molecules/Footer";
+import Header from "./Molecules/Header";
+import styles from "./styles.module.scss";
 
 const Layout = ({ children }: any) => {
+  const [activeNavbar, setActiveNavbar] = useState(false);
   return (
-    <div className="bg-ligth-blue">
-      {/* <Header
+    <div className={`${styles.gridContainer} bg-ligth-blue`}>
+      <Header
         className={styles.gridHeader}
         activeNavbar={activeNavbar}
         setActiveNavbar={setActiveNavbar}
-      /> */}
-      <main className={"container-fluid content-wrapper px-5"}>
+      />
+      <main className={`${styles.gridMain} container-fluid content-wrapper px-5`}>
         <div className="row">
-          <div className="col-12">
-            { children }
-          </div>
+          <div className="col-12">{children}</div>
         </div>
       </main>
-      <Footer />
+      <Footer className={styles.gridFooter} />
     </div>
   );
 };
