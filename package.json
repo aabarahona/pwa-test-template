@@ -13,6 +13,7 @@
     "@types/react-dom": "^18.0.6",
     "@types/react-transition-group": "^4.4.5",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
+    "axios": "^1.1.2",
     "classnames": "^2.3.1",
     "prop-types": "^15.7.2",
     "react": "^18.2.0",
@@ -52,6 +53,7 @@
     ]
   },
   "devDependencies": {
+    "@blue-express/bx-lib-universal-frontend": "^1.0.30",
     "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/parser": "^5.30.6",
     "eslint": "^7.27.0",
